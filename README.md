@@ -1,21 +1,16 @@
 # DemoCommisionCalculate
 
 DemoCommisionCalculate is a Springboot applicaton which is conducted as console application.
-Every 10 second pull data from Orders file, then process and write order's commission fee to another file.
+Application pulls data from Orders file every 10 second, 
+then process and write order's commission fee to another file.
+Process lasts 100 seconds.
 
 ## PreRequsite
 
 Install Java 8 
 
 placed Order.txt file in C:/temp
-it has to include orders records, their structure is name price
-
-it is like 
-
-Order1 103
-Order4 107
-  ..
-
+it has to include orders records. Each line compromise 2 columns which are order name and price that are seperated blank or tab.
 
 # Run the Application
 
@@ -27,12 +22,13 @@ To run the application, run the following command in a terminal window (in the c
 
 What you will see on the terminal 
 
-Each 10 second pullin mechanism will run, process orders.
-You can see the logs about.
+Each 10 second task pulling data and processing orders will run
+You can see the logs about it.
 
 # Challenge about project 
 
 To calculate commisions in a 10 second, it needs to call commission fee api concurrently.
+Each api call takes 0.5 seconds and sequentailly api call doesn't work to meet requirements.
 
 # Improvement
 
