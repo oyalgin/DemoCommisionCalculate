@@ -1,11 +1,4 @@
 # DemoCommisionCalculate
-DemoCommisionCalculate
-
-
-This project is conducted as console application.
-
-
-# DemoCommisionCalculate
 
 DemoCommisionCalculate is a Springboot applicaton which is conducted as console application.
 Every 10 second pull data from Orders file, then process and write order's commission fee to another file.
