@@ -7,7 +7,9 @@ import java.util.List;
 
 public interface FileOperationService {
 
-    List<String> readFileByLine(String path,Integer numberOfLine);
+
+
+    List<String> readFileByLine(String fileName,Integer numberOfLine);
 
     void writeToFile(String path,List<String> lines);
 

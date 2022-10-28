@@ -1,6 +1,6 @@
 package com.fana.demosheduler.configuration;
 
-import com.fana.demosheduler.service.CommissionService;
+import com.fana.demosheduler.CommissionCalculatorFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
@@ -12,11 +12,12 @@ public class ScheduleConfig {
     @Autowired
     ThreadPoolTaskScheduler scheduler;
     @Autowired
-    CommissionService commissionService;
+    CommissionCalculatorFacade commissionCalculatorFacade;
     public void scheduleTask() {
         //create task which prepares commissions
         Runnable task = () -> {
-            commissionService.calculateCommission();
+            commissionCalculatorFacade.process();
+
         };
 
         scheduler.scheduleAtFixedRate(task, new Date(), 10000);

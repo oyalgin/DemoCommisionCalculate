@@ -2,8 +2,10 @@ package com.fana.demosheduler.client;
 
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
@@ -17,14 +19,18 @@ public class FanaClient {
 
     @Value("${api}")
     private String api;
-
     @Autowired
     private  RestTemplate restTemplate;
+    @Autowired
+    private HttpEntity<String> httpEntity;
+
+    @Autowired
+    private ExecutorService executor;
 
     public List<String> calculateCommissions(List<Integer> priceList){
 
+        executor = Executors.newFixedThreadPool(10);
         List<Future<String>> futureList = new ArrayList<>();
-        ExecutorService executor = Executors.newFixedThreadPool(10);
         for(Integer price: priceList){
             Callable task = () -> { return this.getCommissionFee(price); };
             //each callable added executor, executor returns Future variable including commission service return
@@ -60,12 +66,12 @@ public class FanaClient {
 
     private String getCommissionFee(Integer price){
 
-        HttpHeaders headers = new HttpHeaders();
+        /*HttpHeaders headers = new HttpHeaders();
         headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
         headers.add("user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36");
-        HttpEntity<String> entity = new HttpEntity<String>("parameters", headers);
+        HttpEntity<String> entity = new HttpEntity<String>("parameters", headers);*/
 
-        ResponseEntity<String> response =restTemplate.exchange(api, HttpMethod.GET, entity, String.class,price );
+        ResponseEntity<String> response =restTemplate.exchange(api, HttpMethod.GET, httpEntity, String.class,price );
 
         JSONObject result = new JSONObject(response.getBody());
 

@@ -25,8 +25,6 @@ public class DemoShedulerApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		logger.info("Command line runner started");
-		//scheduleConfig.scheduleTask();
-
 		Thread.sleep(99000);
 			System.exit(SpringApplication.exit(context));
 	}
