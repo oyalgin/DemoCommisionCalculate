@@ -29,8 +29,8 @@ You can see the logs about it.
 
 # Challenge about project 
 
-To calculate commisions in a 10 second, it needs to call commission fee api concurrently.
-Each api call takes 0.5 seconds and sequentailly api call doesn't work to meet requirements.
+To calculate 100 commisions in a 10 second, application have to call commission fee api concurrently.
+Api returns result in 0.5 seconds and calling api sequentially  doesn't meet requirements. We have to enhance performance by using concurreny.
 
 # Improvement
 
