@@ -1,21 +1,22 @@
 # DemoCommisionCalculate
 
-DemoCommisionCalculate is a Springboot applicaton which is conducted as console application.
+DemoCommisionCalculate is a Springboot applicaton which is conducted as a console application.
 In every 10 seconds Application pulls orders which is kept in Orders.txt file.
-then calculates commmission fee by calling api https://api-rate.fanatest.workers.dev/?price=?
+then calculates commmission fee by calling this api https://api-rate.fanatest.workers.dev/?price=?
 
-Process should process 1000 records in 100 seconds.
+Orders file includes 1000 records which should be processed in 100 seconds by scheduled task in this application.
 
 ## PreRequsite
 
 Install Java 8 
 
-placed Order.txt file in C:/temp
+place Order.txt file in C:/temp
 it has to include orders records. Each line compromise 2 columns which are order name and price that are seperated blank or tab.
 
 # Run the Application
 
 clone the project or download as a zip 
+
 go to demo-sheduler\src\main\java\com\fana\demosheduler 
 To run the application, run the following command in a terminal window (in the complete) directory:
 
