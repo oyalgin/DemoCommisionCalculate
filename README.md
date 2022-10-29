@@ -1,6 +1,6 @@
 # DemoCommisionCalculate
 
-DemoCommisionCalculate is a Springboot applicaton which is conducted as a console application.
+DemoCommisionCalculate is a Springboot applicaton which is constructed as a console application.
 In every 10 seconds Application pulls orders kept in Orders.txt file.
 then calculates commmission fee by calling this api https://api-rate.fanatest.workers.dev/?price=?
 
