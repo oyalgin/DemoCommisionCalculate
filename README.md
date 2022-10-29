@@ -26,12 +26,12 @@ To run the application, run the following command in a terminal window (in the c
 # Challenge about project 
 
 To calculate 100 commisions in a 10 second, application calls commission fee api concurrently.
-Api returns result in 0.5 seconds and calling api sequentially  doesn't meet requirements. We have to enhance performance by using concurreny.
+Api returns result in 0.5 seconds and calling api sequentially  doesn't meet requirements. We have to enhance performance by using concurrency.
 
 # Improvement
 
-Project can be dockerized in future.
-More test cases can be added to improve covareage rate.
+Project can be dockerized in the future.
+More test cases can be added to improve coverage rate.
 
 
 ## Contributing
