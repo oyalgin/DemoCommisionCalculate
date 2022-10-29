@@ -11,7 +11,7 @@ Orders file includes 1000 records which should be processed in 100 seconds by sc
 Install Java 8 
 
 place Order.txt file in C:/temp
-it has to include orders records. Each line compromise 2 columns which are order name and price that are seperated blank or tab.
+it has to include orders records. Each line compromise 2 columns which are order name and price that are seperated by blank or tab.
 
 # Run the Application
 
