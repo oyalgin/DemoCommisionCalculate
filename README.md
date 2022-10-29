@@ -22,14 +22,10 @@ To run the application, run the following command in a terminal window (in the c
 
 ./mvnw spring-boot:run
 
-What you will see on the terminal 
-
-Each 10 second task pulling data and processing orders will run
-You can see the logs about it.
 
 # Challenge about project 
 
-To calculate 100 commisions in a 10 second, application have to call commission fee api concurrently.
+To calculate 100 commisions in a 10 second, application calls commission fee api concurrently.
 Api returns result in 0.5 seconds and calling api sequentially  doesn't meet requirements. We have to enhance performance by using concurreny.
 
 # Improvement
