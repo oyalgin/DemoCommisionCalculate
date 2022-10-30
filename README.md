@@ -17,7 +17,7 @@ it has to include orders records. Each line compromise 2 columns which are order
 
 clone the project or download as a zip 
 
-go to demo-sheduler\src\main\java\com\fana\demosheduler 
+go to demo-scheduler folder,
 To run the application, run the following command in a terminal window (in the complete) directory:
 
 ./mvnw spring-boot:run
