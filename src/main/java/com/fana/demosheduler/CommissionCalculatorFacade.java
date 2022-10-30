@@ -36,7 +36,7 @@ public class CommissionCalculatorFacade {
         //create commission file
         fileOperationService.writeToFile("OrderCommission.txt", commissions);
 
-        logger.info("Scheduled task lasted finished");
+        logger.info("Calculation commission task finished");
     }
 
     private List<Integer> getPriceList(List<String> lines){
